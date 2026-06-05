@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets registrados - Sistema Help Desk</title>
+</head>
+<body>
+    <header>
+        <img src="assets/img/logo-helpdesk.svg" alt="Logotipo del sistema Help Desk" width="90" height="90">
+        <h1>Listado de tickets registrados</h1>
+        <p>Consulta organizada de incidentes técnicos reportados por los usuarios.</p>
+    </header>
+
+    <nav aria-label="Menú principal">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="reportar.html">Reportar incidente</a></li>
+            <li><a href="tickets.html">Tickets registrados</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Tickets del sistema</h2>
+            <article>
+                <h3>Listado general</h3>
+                <table>
+                    <caption>Registro inicial de tickets Help Desk</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Código</th>
+                            <th scope="col">Título</th>
+                            <th scope="col">Categoría</th>
+                            <th scope="col">Prioridad</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Técnico asignado</th>
+                            <th scope="col">Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HD-001</td>
+                            <td>Servidor principal sin respuesta</td>
+                            <td>Hardware</td>
+                            <td>Alta</td>
+                            <td>En proceso</td>
+                            <td>Técnico de soporte 1</td>
+                            <td>18/05/2026</td>
+                        </tr>
+                        <tr>
+                            <td>HD-002</td>
+                            <td>Falla de conectividad en laboratorio</td>
+                            <td>Red</td>
+                            <td>Media</td>
+                            <td>Abierto</td>
+                            <td>Pendiente de asignación</td>
+                            <td>19/05/2026</td>
+                        </tr>
+                        <tr>
+                            <td>HD-003</td>
+                            <td>Error al iniciar aplicación administrativa</td>
+                            <td>Software</td>
+                            <td>Baja</td>
+                            <td>Resuelto</td>
+                            <td>Técnico de soporte 2</td>
+                            <td>20/05/2026</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <section>
+            <h2>Estados utilizados</h2>
+            <article>
+                <h3>Flujo de atención</h3>
+                <ol>
+                    <li>Abierto: el ticket fue registrado y espera revisión.</li>
+                    <li>En proceso: el técnico asignado se encuentra atendiendo el caso.</li>
+                    <li>Resuelto: se registró una solución técnica al incidente.</li>
+                    <li>Cerrado: el caso fue validado y finalizado.</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desarrollo de Sistemas Informáticos - Actividad #3 - Listado estructurado de tickets.</p>
+    </footer>
+</body>
+</html>
