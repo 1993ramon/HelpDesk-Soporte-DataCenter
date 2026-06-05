@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220" role="img" aria-labelledby="titulo desc">
+  <title id="titulo">Logotipo del sistema Help Desk</title>
+  <desc id="desc">Escudo simple con computadora, engranaje y símbolo de soporte técnico.</desc>
+  <rect x="20" y="20" width="180" height="180" rx="24" fill="#eef4ff" stroke="#1c4f82" stroke-width="8"/>
+  <rect x="55" y="65" width="110" height="70" rx="8" fill="#ffffff" stroke="#1c4f82" stroke-width="7"/>
+  <rect x="88" y="142" width="44" height="11" fill="#1c4f82"/>
+  <rect x="70" y="158" width="80" height="11" rx="4" fill="#1c4f82"/>
+  <circle cx="156" cy="69" r="23" fill="#7fbf3f" stroke="#1c4f82" stroke-width="6"/>
+  <path d="M146 69h20M156 59v20" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+  <path d="M67 94h49M67 112h35" stroke="#1c4f82" stroke-width="7" stroke-linecap="round"/>
+  <path d="M45 176c16-19 35-28 65-28s49 9 65 28" fill="none" stroke="#1c4f82" stroke-width="7" stroke-linecap="round"/>
+</svg>
