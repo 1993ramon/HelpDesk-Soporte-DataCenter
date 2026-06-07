@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Kit | HelpDesk Soporte Data Center</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="ui-container app-header__content">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio del UI Kit">
+        <span class="brand__mark" aria-hidden="true">HD</span>
+        <span>
+          <span class="brand__title">HelpDesk Data Center</span>
+          <span class="brand__subtitle">Librería de Componentes UI</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Navegación principal del UI Kit">
+        <a class="nav__link" href="#tokens">Variables</a>
+        <a class="nav__link" href="#botones">Botones</a>
+        <a class="nav__link" href="#formularios">Formularios</a>
+        <a class="nav__link" href="#tickets">Tickets</a>
+      </nav>
+    </div>
+
+    <section class="hero" id="inicio">
+      <div class="ui-container hero__panel">
+        <p class="hero__eyebrow">Actividad #5 - Design System</p>
+        <h1 class="hero__title">Componentes reutilizables para el sistema de gestión de incidentes.</h1>
+        <p class="hero__text">
+          Este archivo demuestra las piezas visuales principales del Help Desk: botones,
+          formularios, tarjetas y etiquetas de prioridad. La implementación usa CSS3 puro,
+          variables, modelo de cajas, selectores de estado y clases comunes para evitar código repetido.
+        </p>
+        <div class="ui-row" aria-label="Acciones principales">
+          <a class="btn btn--primary" href="#formularios">Registrar ticket</a>
+          <a class="btn btn--outline" href="#tickets">Ver tarjetas</a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="ui-container ui-section" id="tokens" aria-labelledby="tokens-title">
+      <h2 class="ui-section__title" id="tokens-title">1. Variables y paleta corporativa</h2>
+      <p class="ui-section__description">
+        Los colores, radios, sombras, espaciados y tipografía están centralizados en <strong>:root</strong>,
+        lo que permite mantener una línea gráfica consistente en todo el proyecto.
+      </p>
+      <ul class="token-list">
+        <li class="token">
+          <span class="token__swatch swatch-primary" aria-hidden="true"></span>
+          <p class="token__name">Primario</p>
+          <p class="token__value">#0f4c81</p>
+        </li>
+        <li class="token">
+          <span class="token__swatch swatch-secondary" aria-hidden="true"></span>
+          <p class="token__name">Secundario</p>
+          <p class="token__value">#2b6777</p>
+        </li>
+        <li class="token">
+          <span class="token__swatch swatch-success" aria-hidden="true"></span>
+          <p class="token__name">Éxito</p>
+          <p class="token__value">#16a34a</p>
+        </li>
+        <li class="token">
+          <span class="token__swatch swatch-danger" aria-hidden="true"></span>
+          <p class="token__name">Error / peligro</p>
+          <p class="token__value">#dc2626</p>
+        </li>
+        <li class="token">
+          <span class="token__swatch swatch-warning" aria-hidden="true"></span>
+          <p class="token__name">Advertencia</p>
+          <p class="token__value">#f59e0b</p>
+        </li>
+        <li class="token">
+          <span class="token__swatch swatch-surface" aria-hidden="true"></span>
+          <p class="token__name">Superficie</p>
+          <p class="token__value">#ffffff</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="ui-container ui-section" id="botones" aria-labelledby="buttons-title">
+      <h2 class="ui-section__title" id="buttons-title">2. Botones reutilizables</h2>
+      <p class="ui-section__description">
+        La clase base <strong>.btn</strong> concentra el tamaño, padding, radio y transición. Las variantes
+        solo cambian color e intención, evitando duplicar estilos.
+      </p>
+      <div class="card">
+        <div class="card__body ui-stack">
+          <div class="ui-row">
+            <button class="btn btn--primary" type="button">Guardar ticket</button>
+            <button class="btn btn--secondary" type="button">Asignar técnico</button>
+            <button class="btn btn--danger" type="button">Eliminar</button>
+            <button class="btn btn--outline" type="button">Cancelar</button>
+          </div>
+          <p class="form-help">
+            Los botones incluyen estados <strong>:hover</strong>, <strong>:focus-visible</strong> y <strong>:disabled</strong>
+            para mejorar la interacción por mouse y teclado.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ui-container ui-section" id="formularios" aria-labelledby="forms-title">
+      <h2 class="ui-section__title" id="forms-title">3. Formularios</h2>
+      <p class="ui-section__description">
+        Los campos de texto, listas desplegables y áreas de descripción usan bordes, padding y sombra de enfoque.
+      </p>
+      <div class="ui-grid">
+        <form class="card form-card ui-stack" aria-label="Formulario de demostración para registrar un ticket">
+          <div class="form-group">
+            <label class="form-label" for="asunto">Asunto del incidente</label>
+            <input class="form-control" id="asunto" name="asunto" type="text" placeholder="Ej. Servidor sin respuesta" autocomplete="off">
+            <span class="form-help">Escribe un título breve y descriptivo.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="categoria">Categoría</label>
+            <select class="form-select" id="categoria" name="categoria">
+              <option value="">Seleccionar categoría</option>
+              <option value="redes">Redes</option>
+              <option value="servidores">Servidores</option>
+              <option value="seguridad">Seguridad</option>
+              <option value="base-datos">Base de datos</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="descripcion">Descripción</label>
+            <textarea class="form-textarea" id="descripcion" name="descripcion" placeholder="Detalle el problema detectado..."></textarea>
+          </div>
+
+          <div class="ui-row">
+            <button class="btn btn--primary" type="submit">Enviar reporte</button>
+            <button class="btn btn--outline" type="reset">Limpiar</button>
+          </div>
+        </form>
+
+        <div class="ui-stack">
+          <div class="alert alert--success" role="status">
+            <p class="alert__title">Ticket registrado correctamente</p>
+            <p class="alert__text">El incidente fue enviado al área de soporte.</p>
+          </div>
+          <div class="alert alert--warning" role="alert">
+            <p class="alert__title">Revisión pendiente</p>
+            <p class="alert__text">El ticket requiere asignación de prioridad.</p>
+          </div>
+          <div class="alert alert--danger" role="alert">
+            <p class="alert__title">Incidente crítico</p>
+            <p class="alert__text">Se recomienda atender el caso de forma inmediata.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ui-container ui-section" id="tickets" aria-labelledby="tickets-title">
+      <h2 class="ui-section__title" id="tickets-title">4. Tarjetas de tickets y badges</h2>
+      <p class="ui-section__description">
+        Las tarjetas usan <strong>box-shadow</strong>, bordes redondeados y una estructura flexible para presentar
+        la información de incidentes. Los badges muestran prioridad Alta, Media y Baja.
+      </p>
+      <div class="ui-grid">
+        <article class="card ticket-card card__body" aria-labelledby="ticket-1-title">
+          <div class="ticket-card__header">
+            <div>
+              <p class="ticket-card__code">#TK-001</p>
+              <h3 class="card__title" id="ticket-1-title">Servidor principal sin respuesta</h3>
+            </div>
+            <span class="badge badge--high">Alta</span>
+          </div>
+          <p class="card__text">
+            El servidor de aplicaciones presenta caída total y afecta el acceso de usuarios internos.
+          </p>
+          <div class="ticket-card__footer">
+            <div class="ticket-meta">
+              <span>Área: Infraestructura</span>
+              <span>Estado: Abierto</span>
+            </div>
+            <button class="btn btn--primary" type="button">Atender</button>
+          </div>
+        </article>
+
+        <article class="card ticket-card card__body" aria-labelledby="ticket-2-title">
+          <div class="ticket-card__header">
+            <div>
+              <p class="ticket-card__code">#TK-002</p>
+              <h3 class="card__title" id="ticket-2-title">Lentitud en consultas de base de datos</h3>
+            </div>
+            <span class="badge badge--medium">Media</span>
+          </div>
+          <p class="card__text">
+            Las consultas demoran más de lo esperado durante las horas de mayor actividad del sistema.
+          </p>
+          <div class="ticket-card__footer">
+            <div class="ticket-meta">
+              <span>Área: Base de datos</span>
+              <span>Estado: En análisis</span>
+            </div>
+            <button class="btn btn--secondary" type="button">Asignar</button>
+          </div>
+        </article>
+
+        <article class="card ticket-card card__body" aria-labelledby="ticket-3-title">
+          <div class="ticket-card__header">
+            <div>
+              <p class="ticket-card__code">#TK-003</p>
+              <h3 class="card__title" id="ticket-3-title">Solicitud de revisión preventiva</h3>
+            </div>
+            <span class="badge badge--low">Baja</span>
+          </div>
+          <p class="card__text">
+            Se solicita verificar el estado general de los equipos de red antes del mantenimiento mensual.
+          </p>
+          <div class="ticket-card__footer">
+            <div class="ticket-meta">
+              <span>Área: Redes</span>
+              <span>Estado: Programado</span>
+            </div>
+            <button class="btn btn--outline" type="button">Ver detalle</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="ui-container">
+      <p>Design System desarrollado con HTML5 y CSS3 puro para el sistema HelpDesk Soporte Data Center.</p>
+    </div>
+  </footer>
+</body>
+</html>
