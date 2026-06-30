@@ -1,0 +1,221 @@
+/* =============================================================
+   Actividad #6 - Implementación de diseño adaptable y layout
+   Este archivo NO reemplaza la librería UI Kit de la Actividad #5.
+   Solo agrega la organización responsive de las páginas del Help Desk.
+   ============================================================= */
+
+.helpdesk-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.helpdesk-header__content {
+  justify-content: flex-start;
+}
+
+.brand__mark--logo {
+  width: 64px;
+  height: 64px;
+  padding: 0.35rem;
+  background: var(--color-surface);
+}
+
+.brand__mark--logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.site-nav {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav--responsive {
+  padding-block: 0.65rem;
+}
+
+.site-nav .nav__link {
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+.site-nav .nav__link:hover,
+.site-nav .nav__link:focus-visible {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+}
+
+.page-main {
+  flex: 1;
+  padding-block: var(--space-5);
+}
+
+.layout-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.layout-grid--dashboard {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.layout-grid--form {
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+}
+
+.layout-grid--tickets {
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.5fr);
+}
+
+.tickets-card {
+  min-width: 0;
+}
+
+.summary-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+
+.summary-list li {
+  display: grid;
+  gap: 0.25rem;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--color-primary-soft);
+  border: 1px solid var(--color-border);
+}
+
+.summary-list span {
+  color: var(--color-muted);
+  font-size: 0.92rem;
+}
+
+.summary-list strong {
+  color: var(--color-primary-dark);
+  font-size: 1.35rem;
+}
+
+.priority-box {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  margin: 0;
+}
+
+.priority-box legend {
+  color: var(--color-primary-dark);
+  font-weight: 800;
+  padding-inline: 0.35rem;
+}
+
+.priority-box p {
+  margin: 0.45rem 0;
+}
+
+.form-actions {
+  margin: 0;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.table-responsive:focus {
+  outline: 3px solid rgb(37 99 235 / 0.28);
+  outline-offset: 3px;
+}
+
+.helpdesk-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+}
+
+.helpdesk-table caption {
+  padding: var(--space-3);
+  text-align: left;
+  color: var(--color-muted);
+  font-weight: 700;
+}
+
+.helpdesk-table th,
+.helpdesk-table td {
+  padding: 0.85rem;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.helpdesk-table th {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+}
+
+.helpdesk-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.site-footer {
+  margin-top: auto;
+  background: var(--color-primary-dark);
+  color: var(--color-surface);
+}
+
+.site-footer a {
+  color: var(--color-warning-soft);
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .layout-grid--dashboard,
+  .layout-grid--form,
+  .layout-grid--tickets {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .helpdesk-header__content,
+  .brand {
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .nav--responsive {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .site-nav .nav__link,
+  .form-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .summary-list {
+    grid-template-columns: 1fr;
+  }
+
+  .page-main {
+    padding-block: var(--space-4);
+  }
+
+  .helpdesk-table {
+    min-width: 680px;
+  }
+}
