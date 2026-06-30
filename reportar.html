@@ -4,88 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reportar incidente - Sistema Help Desk</title>
+    <!-- Librería de componentes UI creada en la Actividad #5 -->
+    <link rel="stylesheet" href="Kit_UI/style.css">
+    <!-- Estilos nuevos de la Actividad #6 para layout responsive -->
+    <link rel="stylesheet" href="assets/css/responsive-layout.css">
 </head>
-<body>
-    <header>
-        <img src="assets/img/logo-helpdesk.svg" alt="Logotipo del sistema Help Desk" width="90" height="90">
-        <h1>Reportar incidente técnico</h1>
-        <p>Formulario de ingreso de incidentes para usuarios del sistema Help Desk.</p>
+<body class="helpdesk-page">
+    <header class="app-header helpdesk-header">
+        <div class="ui-container app-header__content helpdesk-header__content">
+            <div class="brand">
+                <span class="brand__mark brand__mark--logo">
+                    <img src="assets/img/logo-helpdesk.svg" alt="Logotipo del sistema Help Desk" width="90" height="90">
+                </span>
+                <div>
+                    <h1 class="brand__title">Reportar incidente técnico</h1>
+                    <p class="brand__subtitle">Formulario de ingreso de incidentes para usuarios del sistema Help Desk.</p>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <nav aria-label="Menú principal">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="reportar.html">Reportar incidente</a></li>
-            <li><a href="tickets.html">Tickets registrados</a></li>
-        </ul>
+    <nav class="site-nav" aria-label="Menú principal">
+        <div class="ui-container nav nav--responsive">
+            <a class="nav__link" href="index.html">Inicio</a>
+            <a class="nav__link" href="reportar.html">Reportar incidente</a>
+            <a class="nav__link" href="tickets.html">Tickets registrados</a>
+        </div>
     </nav>
 
-    <main>
-        <section>
-            <h2>Formulario de registro</h2>
-            <article>
-                <h3>Datos del incidente</h3>
-                <form action="#" method="post">
-                    <p>
-                        <label for="titulo">Título del incidente:</label><br>
-                        <input type="text" id="titulo" name="titulo" required placeholder="Ejemplo: Sin conexión a la red interna">
-                    </p>
-
-                    <p>
-                        <label for="categoria">Categoría:</label><br>
-                        <select id="categoria" name="categoria" required>
-                            <option value="">Seleccione una categoría</option>
-                            <option value="red">Red</option>
-                            <option value="hardware">Hardware</option>
-                            <option value="software">Software</option>
-                        </select>
-                    </p>
-
-                    <fieldset>
-                        <legend>Nivel de prioridad:</legend>
-                        <p>
-                            <input type="radio" id="prioridad-alta" name="prioridad" value="alta" required>
-                            <label for="prioridad-alta">Alta</label>
+    <main class="ui-container page-main layout-grid layout-grid--form">
+        <section class="card form-card-responsive">
+            <div class="card__body">
+                <h2 class="card__title">Formulario de registro</h2>
+                <article>
+                    <h3>Datos del incidente</h3>
+                    <form class="ui-stack" action="#" method="post">
+                        <p class="form-group">
+                            <label class="form-label" for="titulo">Título del incidente:</label>
+                            <input class="form-control" type="text" id="titulo" name="titulo" required placeholder="Ejemplo: Sin conexión a la red interna">
                         </p>
-                        <p>
-                            <input type="radio" id="prioridad-media" name="prioridad" value="media">
-                            <label for="prioridad-media">Media</label>
-                        </p>
-                        <p>
-                            <input type="radio" id="prioridad-baja" name="prioridad" value="baja">
-                            <label for="prioridad-baja">Baja</label>
-                        </p>
-                    </fieldset>
 
-                    <p>
-                        <label for="descripcion">Descripción detallada:</label><br>
-                        <textarea id="descripcion" name="descripcion" rows="8" cols="60" required placeholder="Describa el problema, equipo afectado, fecha, hora y evidencias observadas."></textarea>
-                    </p>
+                        <p class="form-group">
+                            <label class="form-label" for="categoria">Categoría:</label>
+                            <select class="form-select" id="categoria" name="categoria" required>
+                                <option value="">Seleccione una categoría</option>
+                                <option value="red">Red</option>
+                                <option value="hardware">Hardware</option>
+                                <option value="software">Software</option>
+                            </select>
+                        </p>
 
-                    <p>
-                        <button type="submit">Enviar incidente</button>
-                        <button type="reset">Limpiar formulario</button>
-                    </p>
-                </form>
-            </article>
+                        <fieldset class="priority-box">
+                            <legend>Nivel de prioridad:</legend>
+                            <p>
+                                <input type="radio" id="prioridad-alta" name="prioridad" value="alta" required>
+                                <label for="prioridad-alta">Alta</label>
+                            </p>
+                            <p>
+                                <input type="radio" id="prioridad-media" name="prioridad" value="media">
+                                <label for="prioridad-media">Media</label>
+                            </p>
+                            <p>
+                                <input type="radio" id="prioridad-baja" name="prioridad" value="baja">
+                                <label for="prioridad-baja">Baja</label>
+                            </p>
+                        </fieldset>
+
+                        <p class="form-group">
+                            <label class="form-label" for="descripcion">Descripción detallada:</label>
+                            <textarea class="form-textarea" id="descripcion" name="descripcion" rows="8" cols="60" required placeholder="Describa el problema, equipo afectado, fecha, hora y evidencias observadas."></textarea>
+                        </p>
+
+                        <p class="ui-row form-actions">
+                            <button class="btn btn--primary" type="submit">Enviar incidente</button>
+                            <button class="btn btn--secondary" type="reset">Limpiar formulario</button>
+                        </p>
+                    </form>
+                </article>
+            </div>
         </section>
 
-        <section>
-            <h2>Recomendaciones para el reporte</h2>
-            <article>
-                <h3>Información mínima sugerida</h3>
-                <ul>
-                    <li>Identificar el servicio o equipo afectado.</li>
-                    <li>Describir el mensaje de error o síntoma principal.</li>
-                    <li>Indicar si el incidente impide continuar con las actividades.</li>
-                    <li>Seleccionar la prioridad de acuerdo con la gravedad del caso.</li>
-                </ul>
-            </article>
+        <section class="card">
+            <div class="card__body">
+                <h2 class="card__title">Recomendaciones para el reporte</h2>
+                <article>
+                    <h3>Información mínima sugerida</h3>
+                    <ul>
+                        <li>Identificar el servicio o equipo afectado.</li>
+                        <li>Describir el mensaje de error o síntoma principal.</li>
+                        <li>Indicar si el incidente impide continuar con las actividades.</li>
+                        <li>Seleccionar la prioridad de acuerdo con la gravedad del caso.</li>
+                    </ul>
+                </article>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>Desarrollo de Sistemas Informáticos - Actividad #3 - Formulario HTML5 para ingreso de incidentes.</p>
+    <footer class="footer site-footer">
+        <div class="ui-container">
+            <p>Desarrollo de Sistemas Informáticos - Actividad #6 - Formulario HTML5 para ingreso de incidentes.</p>
+        </div>
     </footer>
 </body>
 </html>

@@ -4,58 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Sistema Help Desk</title>
+    <!-- Librería de componentes UI creada en la Actividad #5 -->
+    <link rel="stylesheet" href="Kit_UI/style.css">
+    <!-- Estilos nuevos de la Actividad #6 para layout responsive -->
+    <link rel="stylesheet" href="assets/css/responsive-layout.css">
 </head>
-<body>
-    <header>
-        <img src="assets/img/logo-helpdesk.svg" alt="Logotipo del sistema Help Desk" width="90" height="90">
-        <h1>Sistema de Gestión de Incidentes Help Desk</h1>
-        <p>Dashboard principal para el seguimiento de incidentes técnicos de infraestructura.</p>
+<body class="helpdesk-page">
+    <header class="app-header helpdesk-header">
+        <div class="ui-container app-header__content helpdesk-header__content">
+            <div class="brand">
+                <span class="brand__mark brand__mark--logo">
+                    <img src="assets/img/logo-helpdesk.svg" alt="Logotipo del sistema Help Desk" width="90" height="90">
+                </span>
+                <div>
+                    <h1 class="brand__title">Sistema de Gestión de Incidentes Help Desk</h1>
+                    <p class="brand__subtitle">Dashboard principal para el seguimiento de incidentes técnicos de infraestructura.</p>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <nav aria-label="Menú principal">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="reportar.html">Reportar incidente</a></li>
-            <li><a href="tickets.html">Tickets registrados</a></li>
-        </ul>
+    <nav class="site-nav" aria-label="Menú principal">
+        <div class="ui-container nav nav--responsive">
+            <a class="nav__link" href="index.html">Inicio</a>
+            <a class="nav__link" href="reportar.html">Reportar incidente</a>
+            <a class="nav__link" href="tickets.html">Tickets registrados</a>
+        </div>
     </nav>
 
-    <main>
-        <section>
-            <h2>Bienvenida</h2>
-            <article>
-                <h3>Propósito del sistema</h3>
-                <p>Este prototipo estructural representa la interfaz base de un sistema Help Desk orientado a registrar, clasificar y dar seguimiento a incidentes técnicos relacionados con red, hardware y software.</p>
-                <p>La propuesta se deriva del diseño arquitectónico elaborado en la Unidad 1, donde se definieron actores, requerimientos, patrones de diseño y flujo de trabajo mediante Gitflow.</p>
-            </article>
+    <main class="ui-container page-main layout-grid layout-grid--dashboard">
+        <section class="card">
+            <div class="card__body">
+                <h2 class="card__title">Bienvenida</h2>
+                <article class="ui-stack">
+                    <h3>Propósito del sistema</h3>
+                    <p>Este prototipo estructural representa la interfaz base de un sistema Help Desk orientado a registrar, clasificar y dar seguimiento a incidentes técnicos relacionados con red, hardware y software.</p>
+                    <p>La propuesta se deriva del diseño arquitectónico elaborado en la Unidad 1, donde se definieron actores, requerimientos, patrones de diseño y flujo de trabajo mediante Gitflow.</p>
+                </article>
+            </div>
         </section>
 
-        <section>
-            <h2>Resumen general</h2>
-            <article>
-                <h3>Estado de atención</h3>
-                <ul>
-                    <li>Tickets abiertos: 8</li>
-                    <li>Tickets en proceso: 5</li>
-                    <li>Tickets resueltos: 12</li>
-                    <li>Tickets cerrados: 10</li>
-                </ul>
-            </article>
+        <section class="card">
+            <div class="card__body">
+                <h2 class="card__title">Resumen general</h2>
+                <article>
+                    <h3>Estado de atención</h3>
+                    <ul class="summary-list">
+                        <li><span>Tickets abiertos</span><strong>8</strong></li>
+                        <li><span>Tickets en proceso</span><strong>5</strong></li>
+                        <li><span>Tickets resueltos</span><strong>12</strong></li>
+                        <li><span>Tickets cerrados</span><strong>10</strong></li>
+                    </ul>
+                </article>
 
-            <article>
-                <h3>Áreas de soporte consideradas</h3>
-                <ul>
-                    <li>Red: conectividad, acceso a internet y servicios internos.</li>
-                    <li>Hardware: equipos físicos, servidores, periféricos y estaciones de trabajo.</li>
-                    <li>Software: aplicaciones, sistemas operativos, errores de ejecución y servicios digitales.</li>
-                </ul>
-            </article>
+                <article>
+                    <h3>Áreas de soporte consideradas</h3>
+                    <ul>
+                        <li>Red: conectividad, acceso a internet y servicios internos.</li>
+                        <li>Hardware: equipos físicos, servidores, periféricos y estaciones de trabajo.</li>
+                        <li>Software: aplicaciones, sistemas operativos, errores de ejecución y servicios digitales.</li>
+                    </ul>
+                </article>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>Desarrollo de Sistemas Informáticos - Actividad #3 - Prototipo HTML5 Help Desk.</p>
-        <p>Repositorio base: <a href="https://github.com/1993ramon/HelpDesk-Soporte-DataCenter.git">HelpDesk-Soporte-DataCenter</a></p>
+    <footer class="footer site-footer">
+        <div class="ui-container">
+            <p>Desarrollo de Sistemas Informáticos - Actividad #6 - Prototipo HTML5 Help Desk.</p>
+            <p>Repositorio base: <a href="https://github.com/1993ramon/HelpDesk-Soporte-DataCenter.git">HelpDesk-Soporte-DataCenter</a></p>
+        </div>
     </footer>
 </body>
 </html>
